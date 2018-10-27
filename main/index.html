@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <script  type="text/javascript" src="user.js">
+                function getData() {
+                    fetch(`/checkData`)
+                    .then(res => res.json())
+                    .then(body => formatCountries(body))
+                    .catch(err => console.log(`sorry error : ${err}`));
+                 }
+                
+            </script>
+
+    <title>Sign in</title>
+</head>
+<body>
+   <form action="/checkData" method="post" target="_blank">
+    First name: <input type="text" name="name"><br>
+    Country: <input type="text" name="country"><br>
+    Age: <input type="text" name="age"><br>
+    Male: <input type="radio" name="gendare" value="male">female<input type="radio" name="gendare" value="female"><br>
+  <input type="submit" value="Submit">
+</form>
+
+      
+</body>
+</html>
